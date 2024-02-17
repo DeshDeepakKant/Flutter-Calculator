@@ -18,8 +18,5 @@
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.1",
     "topojson-client": "^3.1.0"
-  },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^2.1.4"
   }
 }
