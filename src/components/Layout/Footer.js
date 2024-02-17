@@ -8,7 +8,7 @@ const Wrapper = styled.footer`
 function Footer() {
   return (
     <Wrapper>
-      <p>2020 &copy; Suyeon Kang. All right reserved.</p>
+      <p>2024 &copy; Desh deepak Kant. All right reserved.</p>
     </Wrapper>
   );
 }

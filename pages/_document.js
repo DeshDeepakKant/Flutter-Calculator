@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
             name="description"
             content="Data visualization with D3.js and React."
           />
-          <meta name="author" content="Suyeon Kang" />
+          <meta name="author" content="Desh deepak Kant" />
           <meta property="og:title" content="Data Visualization" />
           <meta
             property="og:description"
