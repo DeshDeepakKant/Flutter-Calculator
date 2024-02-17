@@ -1,3 +1,23 @@
+#!/bin/bash
+
+# Install nvm and Node.js 18
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+nvm install 18
+nvm use 18
+
+# Fix git issues
+git checkout main
+git pull origin main
+git merge fix-build
+git push -f origin main
+
+# Clean install
+rm -rf node_modules
+rm package-lock.json
+
+# Update package.json
+cat > package.json << 'INNEREOF'
 {
   "name": "react-data-visualization",
   "version": "0.1.0",
@@ -26,3 +46,15 @@
     "gh-pages": "^6.1.0"
   }
 }
+INNEREOF
+
+# Install dependencies
+npm install
+
+# Commit and push changes
+git add .
+git commit -m "Update Node.js version and dependencies"
+git push -f origin main
+
+# Deploy
+npm run deploy
