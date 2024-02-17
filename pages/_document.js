@@ -45,14 +45,12 @@ export default class MyDocument extends Document {
             name="description"
             content="Data visualization with D3.js and React."
           />
-          <meta name="author" content="Desh deepak Kant" />
+          <meta name="author" content="Desh Deepak Kant" />
           <meta property="og:title" content="Data Visualization" />
           <meta
             property="og:description"
             content="Data visualization with D3.js and React."
           />
-          {/* <meta property="og:url" content={data.site.siteMetadata.siteUrl} /> */}
-          {/* <link rel="canonical" href={`${data.site.siteMetadata.siteUrl}`} /> */}
         </Head>
         <body>
           <Main />
