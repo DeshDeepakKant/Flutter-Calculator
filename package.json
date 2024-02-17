@@ -2,13 +2,13 @@
   "name": "react-data-visualization",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "22.x"
-  },
+  "homepage": "https://DeshDeepakKant.github.io/React-D3-VizHub-Interactive-Data-Insights",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export",
+    "deploy": "npm run export && touch out/.nojekyll && gh-pages -d out -t true"
   },
   "dependencies": {
     "d3": "^7.8.5",
@@ -18,5 +18,8 @@
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.1",
     "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.0"
   }
 }
