@@ -88,5 +88,4 @@ Card.propTypes = {
   link: PropsTypes.string,
 };
 
-export default Card;git push -f origin main
-npm run deploy
+export default Card;
