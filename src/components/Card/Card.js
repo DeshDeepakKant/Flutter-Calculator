@@ -1,91 +1,60 @@
-import React from 'react';
+// src/components/Card/Card.js
 import styled from 'styled-components';
 import Link from 'next/link';
-import PropsTypes from 'prop-types';
 
 export const CardsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 10rem;
-
-  @media (max-width: 568px) {
-    margin-top: 7rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 5rem;
 `;
 
-const Wrapper = styled.div`
-  text-align: center;
-  transition: all 0.3s;
-  font-size: 1.6rem;
-  width: 30rem;
-
-  @media (max-width: 1200px) {
-    margin-bottom: 5rem;
-  }
-
-  @media (max-width: 568px) {
-    width: 35rem;
-  }
-
-  h2,
-  p {
-    text-transform: uppercase;
-  }
-
-  h2 {
-    word-spacing: 4px;
-  }
-
-  p {
-    color: #696969;
-    margin-top: 1rem;
-    font-size: 1.4rem;
-  }
+const CardWrapper = styled.a`
+  position: relative;
+  height: 200px;
+  background: ${({ bgUrl }) => `url(${bgUrl}) no-repeat center center`};
+  background-size: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: translate(0, -10px);
+    transform: translateY(-5px);
   }
 `;
 
-const CardWrapper = styled.div`
-  height: auto;
-  border-radius: 0.5rem;
+const CardContent = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;
 
-const Image = styled.div`
-  background: ${props => `url(${props.bgUrl})`};
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 15rem;
+const CardTitle = styled.h2`
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 `;
 
-function Card({ bgUrl, title, chartType, link }) {
+const CardType = styled.p`
+  color: #d1d1d1;
+  font-size: 0.9rem;
+`;
+
+const Card = ({ bgUrl, title, chartType, link }) => {
   return (
-    <Wrapper>
-      <CardWrapper>
-        <Link href={link}>
-          <a>
-            <Image bgUrl={bgUrl} />
-          </a>
-        </Link>
+    <Link href={link} passHref>
+      <CardWrapper bgUrl={bgUrl}>
+        <CardContent>
+          <CardTitle>{title}</CardTitle>
+          <CardType>{chartType}</CardType>
+        </CardContent>
       </CardWrapper>
-      <h2>{title}</h2>
-      <p>{chartType}</p>
-    </Wrapper>
+    </Link>
   );
-}
-
-Card.propTypes = {
-  bgUrl: PropsTypes.string,
-  title: PropsTypes.string,
-  chartType: PropsTypes.string,
-  link: PropsTypes.string,
 };
 
 export default Card;

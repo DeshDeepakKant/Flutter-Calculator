@@ -1,8 +1,15 @@
 import styled from 'styled-components';
-
 import Layout from 'components/Layout/Layout';
 import Card from 'components/Card/Card';
 import { CardsWrapper } from 'components/Card/Card';
+
+// Add this utility function at the top of the file
+const getImagePath = (path) => {
+  const basePath = process.env.NODE_ENV === 'production' 
+    ? '/React-D3-VizHub-Interactive-Data-Insights' 
+    : '';
+  return `${basePath}${path}`;
+};
 
 const Wrapper = styled.div`
   padding: 5rem;
@@ -23,32 +30,33 @@ const Title = styled.h1`
 `;
 
 function Home() {
-  const cards = [
+
+const cards = [
     {
-      bgUrl: '/images/bubble-map.png',
+      bgUrl: getImagePath('/images/bubble-map.png'),
       title: 'WHO Covid-19 World Dashboard',
       chartType: 'Bubble Map',
-      link: '/covid19-dashboard',
+      link: '/React-D3-VizHub-Interactive-Data-Insights/covid19-dashboard',
     },
     {
-      bgUrl: '/images/line-chart.png',
+      bgUrl: getImagePath('/images/line-chart.png'),
       title: 'Korea Crop Production',
       chartType: 'Line Chart',
-      link: '/korea-crop-production',
+      link: '/React-D3-VizHub-Interactive-Data-Insights/korea-crop-production',
     },
     {
-      bgUrl: '/images/bar-chart.png',
+      bgUrl: getImagePath('/images/bar-chart.png'),
       title: 'Top 20 Countries by Population 2020',
       chartType: 'Bar Chart',
-      link: '/most-populated-countries',
+      link: '/React-D3-VizHub-Interactive-Data-Insights/most-populated-countries',
     },
     {
-      bgUrl: '/images/scatter-plot.png',
+      bgUrl: getImagePath('/images/scatter-plot.png'),
       title: 'Literacy Rates by Country',
       chartType: 'Scatter Plot',
-      link: '/literacy-rates-by-country',
+      link: '/React-D3-VizHub-Interactive-Data-Insights/literacy-rates-by-country',
     },
-  ];
+];
 
   return (
     <Layout headTitle="Data Visualization">
@@ -62,7 +70,7 @@ function Home() {
               bgUrl={card.bgUrl}
               title={card.title}
               chartType={card.chartType}
-              link={card.link}
+              link={getImagePath(card.link)}  // Also update the link paths
               key={i}
             />
           ))}
