@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fliteracy-rates-by-country","\u002Fkorea-crop-production","\u002Fcovid19-dashboard","\u002Fmost-populated-countries"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
