@@ -1,0 +1,11 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/covid19-dashboard": "pages/covid19-dashboard.js",
+  "/": "pages/index.html",
+  "/korea-crop-production": "pages/korea-crop-production.js",
+  "/literacy-rates-by-country": "pages/literacy-rates-by-country.js",
+  "/most-populated-countries": "pages/most-populated-countries.js",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html"
+}
